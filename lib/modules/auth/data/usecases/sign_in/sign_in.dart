@@ -1,7 +1,7 @@
 import 'package:authentication_and_authorization_frontend/app/constants/keys.dart';
 import 'package:authentication_and_authorization_frontend/app/helpers/failure.dart';
 import 'package:authentication_and_authorization_frontend/app/helpers/either.dart';
-import 'package:authentication_and_authorization_frontend/app/services/local_storage/interfaces/local_storage.dart';
+import 'package:authentication_and_authorization_frontend/app/utils/local_storage/interfaces/local_storage.dart';
 import 'package:authentication_and_authorization_frontend/modules/auth/data/dtos/user_credentials.dart';
 import 'package:authentication_and_authorization_frontend/modules/auth/data/dtos/user_signed.dart';
 import 'package:authentication_and_authorization_frontend/modules/auth/data/models/user.dart';
