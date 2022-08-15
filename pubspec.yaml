@@ -12,9 +12,11 @@ dependencies:
   flutter:
     sdk: flutter
 
+  dio: ^4.0.6
   hive: ^2.2.3
   equatable: ^2.0.3
   hive_flutter: ^1.1.0
+  flutter_dotenv: ^5.0.2
   cupertino_icons: ^1.0.2
   flutter_secure_storage: ^5.1.0
 
