@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
-import 'package:authentication_and_authorization_frontend/app/helpers/failure.dart';
-import 'package:authentication_and_authorization_frontend/modules/auth/data/dtos/user_credentials.dart';
-import 'package:authentication_and_authorization_frontend/modules/auth/data/usecases/sign_in/interfaces/sign_in.dart';
-import 'package:authentication_and_authorization_frontend/modules/auth/infra/presenter/controllers/sign_in_state.dart';
+import 'package:authentication_and_authorization_frontend/src/modules/auth/presenter/controllers/sign_in_state.dart';
+import 'package:authentication_and_authorization_frontend/src/app/helpers/failure.dart';
+import 'package:authentication_and_authorization_frontend/src/modules/auth/data/dtos/user_credentials.dart';
+import 'package:authentication_and_authorization_frontend/src/modules/auth/data/usecases/sign_in/interfaces/sign_in.dart';
 
 class SignInCubit extends Cubit<SignInState> {
   SignInCubit(this._signInUsecase)

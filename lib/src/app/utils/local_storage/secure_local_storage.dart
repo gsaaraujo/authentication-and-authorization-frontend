@@ -1,5 +1,5 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:authentication_and_authorization_frontend/app/utils/local_storage/interfaces/local_storage.dart';
+import 'package:authentication_and_authorization_frontend/src/app/utils/local_storage/interfaces/local_storage.dart';
 
 class SecureLocalStorage implements ILocalStorage {
   final FlutterSecureStorage _secureStorage;

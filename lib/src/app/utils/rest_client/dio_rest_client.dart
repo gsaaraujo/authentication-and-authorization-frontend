@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:authentication_and_authorization_frontend/app/utils/rest_client/interfaces/rest_client.dart';
+import 'package:authentication_and_authorization_frontend/src/app/utils/rest_client/interfaces/rest_client.dart';
 
 class DioRestClient implements IRestClient {
   final Dio _dio;

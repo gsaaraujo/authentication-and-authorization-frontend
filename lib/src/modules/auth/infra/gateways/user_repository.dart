@@ -1,6 +1,6 @@
-import 'package:authentication_and_authorization_frontend/modules/auth/data/models/user.dart';
-import 'package:authentication_and_authorization_frontend/modules/auth/data/ports/user_repository.dart';
-import 'package:authentication_and_authorization_frontend/app/utils/rest_client/interfaces/rest_client.dart';
+import 'package:authentication_and_authorization_frontend/src/modules/auth/data/models/user.dart';
+import 'package:authentication_and_authorization_frontend/src/modules/auth/data/ports/user_repository.dart';
+import 'package:authentication_and_authorization_frontend/src/app/utils/rest_client/interfaces/rest_client.dart';
 
 class UserRepository implements IUserRepository {
   final IRestClient _restClient;

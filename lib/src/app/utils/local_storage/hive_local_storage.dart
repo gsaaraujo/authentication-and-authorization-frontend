@@ -1,5 +1,5 @@
 import 'package:hive/hive.dart';
-import 'package:authentication_and_authorization_frontend/app/utils/local_storage/interfaces/local_storage.dart';
+import 'package:authentication_and_authorization_frontend/src/app/utils/local_storage/interfaces/local_storage.dart';
 
 class HiveLocalStorage implements ILocalStorage {
   final HiveInterface _hive;
