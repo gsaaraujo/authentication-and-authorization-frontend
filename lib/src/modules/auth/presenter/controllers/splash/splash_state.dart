@@ -1,21 +1,21 @@
-enum SignInStatus {
+enum SplashStatus {
   initial,
   loading,
   succeed,
   failed,
 }
 
-class SignInState {
-  final SignInStatus status;
+class SplashState {
+  final SplashStatus status;
   final String errorMessage;
 
-  SignInState({
+  SplashState({
     required this.status,
     this.errorMessage = '',
   });
 
-  SignInState copyWith({SignInStatus? status, String? errorMessage}) {
-    return SignInState(
+  SplashState copyWith({SplashStatus? status, String? errorMessage}) {
+    return SplashState(
       status: status ?? this.status,
       errorMessage: errorMessage ?? this.errorMessage,
     );

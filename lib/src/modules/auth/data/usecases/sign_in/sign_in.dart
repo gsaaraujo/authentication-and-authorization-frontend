@@ -4,7 +4,7 @@ import 'package:authentication_and_authorization_frontend/src/app/helpers/either
 import 'package:authentication_and_authorization_frontend/src/modules/auth/data/dtos/user_signed.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/data/dtos/user_credentials.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/data/ports/user_repository.dart';
-import 'package:authentication_and_authorization_frontend/src/app/utils/local_storage/interfaces/local_storage.dart';
+import 'package:authentication_and_authorization_frontend/src/app/services/local_storage/interfaces/local_storage.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/data/usecases/sign_in/interfaces/sign_in.dart';
 
 class SignInUsecase implements ISignInUsecase {
