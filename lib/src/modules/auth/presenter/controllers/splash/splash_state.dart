@@ -1,7 +1,8 @@
 enum SplashStatus {
   initial,
   loading,
-  succeed,
+  userAlreadySignedIn,
+  userNotSignedIn,
   failed,
 }
 

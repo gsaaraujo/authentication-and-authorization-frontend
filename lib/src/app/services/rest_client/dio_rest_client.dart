@@ -7,7 +7,7 @@ class DioRestClient implements IRestClient {
 
   DioRestClient(this._dio) {
     _dio.options.contentType = 'application/json';
-    _dio.options.baseUrl = dotenv.env['VAR_NAME'] ?? '';
+    _dio.options.baseUrl = dotenv.env['API_URL'] ?? '';
     _dio.options.connectTimeout = 10000;
     _dio.options.receiveTimeout = 10000;
   }

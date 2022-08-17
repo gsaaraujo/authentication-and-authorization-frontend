@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 ThemeData loadTheme() {
   return ThemeData(
     useMaterial3: true,
+    scaffoldBackgroundColor: AppColors.background,
     snackBarTheme: const SnackBarThemeData(
       backgroundColor: AppColors.backgroundSnackbar,
       shape: RoundedRectangleBorder(),

@@ -1,3 +1,4 @@
+import 'package:authentication_and_authorization_frontend/src/app/constants/failure_messages.dart';
 import 'package:bloc/bloc.dart';
 import 'package:authentication_and_authorization_frontend/src/app/constants/keys.dart';
 import 'package:authentication_and_authorization_frontend/src/app/services/local_storage/models/user_info.dart';
@@ -24,13 +25,16 @@ class SplashCubit extends Cubit<SplashState> {
       );
 
       if (userInfo == null && userTokens == null) {
-        emit(state.copyWith(status: SplashStatus.failed));
+        emit(state.copyWith(status: SplashStatus.userNotSignedIn));
         return;
       }
 
-      emit(state.copyWith(status: SplashStatus.succeed));
+      emit(state.copyWith(status: SplashStatus.userAlreadySignedIn));
     } catch (e) {
-      emit(state.copyWith(status: SplashStatus.failed));
+      emit(state.copyWith(
+        status: SplashStatus.failed,
+        errorMessage: FailureMessages.unexpectedFailure,
+      ));
     }
   }
 }
