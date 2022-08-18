@@ -1,3 +1,4 @@
+import 'package:authentication_and_authorization_frontend/src/app/styles/app_texts.dart';
 import 'package:flutter/material.dart';
 
 class InputText extends StatefulWidget {
@@ -48,6 +49,7 @@ class _TextFormFieldWidgetState extends State<InputText> {
       obscureText: isPasswordHiden,
       controller: widget.controller,
       keyboardType: widget.textInputType,
+      style: AppTexts.textInput,
       decoration: InputDecoration(
         counterText: '',
         labelText: widget.label,

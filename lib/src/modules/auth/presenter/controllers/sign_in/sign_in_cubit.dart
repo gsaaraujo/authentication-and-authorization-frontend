@@ -1,5 +1,7 @@
+import 'package:dio/dio.dart';
 import 'package:bloc/bloc.dart';
 import 'package:authentication_and_authorization_frontend/src/app/helpers/failure.dart';
+import 'package:authentication_and_authorization_frontend/src/app/constants/failure_messages.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/data/dtos/user_credentials.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/data/usecases/sign_in/interfaces/sign_in.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/presenter/controllers/sign_in/sign_in_state.dart';
@@ -12,6 +14,8 @@ class SignInCubit extends Cubit<SignInState> {
 
   void signIn(String email, String password) async {
     try {
+      emit(state.copyWith(status: SignInStatus.loading));
+
       final userCredentialsDTO = UserCredentialsDTO(
         email: email,
         password: password,
@@ -23,37 +27,36 @@ class SignInCubit extends Cubit<SignInState> {
       if (userSignedOrFailure.isLeft()) {
         final Failure failure = userSignedOrFailure.left;
 
-        state.copyWith(
+        emit(state.copyWith(
           status: SignInStatus.failed,
           errorMessage: failure.message,
-        );
+        ));
 
         return;
       }
 
-      state.copyWith(
-        status: SignInStatus.succeed,
-        errorMessage: '',
-      );
-    } on Exception catch (e) {
-      // if (e.message == 'The email must be a valid email.') {
-      //   state.copyWith(
-      //     status: SignInStatus.succeed,
-      //     errorMessage: 'This email is invalid. Please, try another one.',
-      //   );
-      // }
+      emit(state.copyWith(status: SignInStatus.succeed));
+    } on DioError catch (e) {
+      String apiMessage = e.response?.data ?? '';
+      String errorMessage = FailureMessages.unexpectedFailure;
 
-      // if (e.message == 'Email or password is incorrect.') {
-      //   state.copyWith(
-      //     status: SignInStatus.succeed,
-      //     errorMessage: 'Email or password is incorrect.',
-      //   );
-      // }
+      if (apiMessage == 'The email must be a valid email.') {
+        errorMessage = 'This email is invalid. Please, try another one.';
+      }
 
-      // state.copyWith(
-      //   status: SignInStatus.succeed,
-      //   errorMessage: 'Something went wrong. Please try again later.',
-      // );
+      if (apiMessage == 'Email or password is incorrect.') {
+        errorMessage = 'Email or password is incorrect.';
+      }
+
+      emit(state.copyWith(
+        status: SignInStatus.failed,
+        errorMessage: errorMessage,
+      ));
+    } catch (e) {
+      emit(state.copyWith(
+        status: SignInStatus.failed,
+        errorMessage: FailureMessages.unexpectedFailure,
+      ));
     }
   }
 }

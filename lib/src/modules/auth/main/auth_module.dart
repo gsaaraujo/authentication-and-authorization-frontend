@@ -2,6 +2,7 @@ import 'package:authentication_and_authorization_frontend/src/main/app_module.da
 import 'package:authentication_and_authorization_frontend/src/modules/auth/data/ports/user_repository.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/infra/gateways/user_repository.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/presenter/controllers/splash/splash_cubit.dart';
+import 'package:authentication_and_authorization_frontend/src/modules/auth/presenter/pages/sign_in.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/presenter/pages/splash.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/data/usecases/sign_in/sign_in.dart';
@@ -25,5 +26,6 @@ class AuthModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ChildRoute('/', child: (context, args) => const SplashPage()),
+        ChildRoute('/sign-in', child: (context, args) => const SignInPage()),
       ];
 }

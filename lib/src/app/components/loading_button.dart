@@ -23,9 +23,16 @@ class LoadingButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         elevation: 0,
         minimumSize: Size(width ?? 0.0, 48.0),
+        primary: AppColors.backgroundButton,
       ),
       child: isLoading
-          ? const CircularProgressIndicator(color: AppColors.backgroundButton)
+          ? const SizedBox(
+              width: 24,
+              height: 24,
+              child: CircularProgressIndicator(
+                color: AppColors.backgroundButton,
+              ),
+            )
           : Text(title, style: AppTexts.textButton),
     );
   }

@@ -12,20 +12,19 @@ ThemeData loadTheme() {
       contentTextStyle: AppTexts.textSnackbar,
     ),
     buttonTheme: const ButtonThemeData(
-      buttonColor: AppColors.backgroundButton,
       height: 48.0,
       minWidth: 0.0,
       shape: RoundedRectangleBorder(),
+      buttonColor: AppColors.backgroundButton,
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       errorMaxLines: 1,
+      contentPadding: const EdgeInsets.symmetric(vertical: 13.0),
       hintStyle: AppTexts.hintInput,
       labelStyle: AppTexts.hintInput,
       errorStyle: AppTexts.errorMessage,
-      floatingLabelStyle: AppTexts.hintInput.copyWith(
-        color: AppColors.focusInput,
-      ),
+      floatingLabelStyle: AppTexts.hintInput,
       fillColor: AppColors.backgroundInput,
       prefixIconColor: AppColors.iconInput,
       suffixIconColor: AppColors.iconInput,

@@ -26,6 +26,13 @@ class AppTexts {
     fontWeight: FontWeight.normal,
   );
 
+  static const heading32Normal = TextStyle(
+    fontSize: 32,
+    fontFamily: 'Poppins',
+    color: AppColors.heading,
+    fontWeight: FontWeight.normal,
+  );
+
   // Medium
   static const heading12Medium = TextStyle(
     fontSize: 12,
@@ -72,10 +79,10 @@ class AppTexts {
 
   // Button
   static const errorMessage = TextStyle(
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: 'Poppins',
     color: AppColors.errorMessage,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.normal,
   );
 
   static const textButton = TextStyle(

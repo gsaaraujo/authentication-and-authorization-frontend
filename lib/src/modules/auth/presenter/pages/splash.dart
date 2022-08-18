@@ -1,3 +1,4 @@
+import 'package:authentication_and_authorization_frontend/src/app/components/show_snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -20,12 +21,11 @@ class SplashPage extends StatelessWidget {
           }
 
           if (state.status == SplashStatus.userNotSignedIn) {
-            // Modular.to.pushNamed('/sign-in');
+            Modular.to.pushNamed('/sign-in');
           }
 
           if (state.status == SplashStatus.failed) {
-            final snack = SnackBar(content: Text(state.errorMessage));
-            ScaffoldMessenger.of(context).showSnackBar(snack);
+            showSnackbar(message: state.errorMessage);
           }
         },
         child: Center(
