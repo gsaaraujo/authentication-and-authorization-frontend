@@ -5,6 +5,7 @@ import 'package:authentication_and_authorization_frontend/src/app/constants/fail
 import 'package:authentication_and_authorization_frontend/src/modules/auth/data/dtos/user_credentials.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/data/usecases/sign_in/interfaces/sign_in.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/presenter/controllers/sign_in/sign_in_state.dart';
+import 'package:flutter/cupertino.dart';
 
 class SignInCubit extends Cubit<SignInState> {
   SignInCubit(this._signInUsecase)
@@ -52,7 +53,8 @@ class SignInCubit extends Cubit<SignInState> {
         status: SignInStatus.failed,
         errorMessage: errorMessage,
       ));
-    } catch (e) {
+    } catch (e, s) {
+      debugPrintStack(stackTrace: s);
       emit(state.copyWith(
         status: SignInStatus.failed,
         errorMessage: FailureMessages.unexpectedFailure,

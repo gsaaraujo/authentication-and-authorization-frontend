@@ -40,6 +40,10 @@ class _SignInPageState extends State<SignInPage> {
         if (state.status == SignInStatus.failed) {
           showSnackbar(message: state.errorMessage);
         }
+
+        if (state.status == SignInStatus.succeed) {
+          Modular.to.navigate('/home');
+        }
       },
       child: Scaffold(
         body: SafeArea(

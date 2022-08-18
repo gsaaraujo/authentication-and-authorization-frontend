@@ -5,6 +5,7 @@ import 'package:authentication_and_authorization_frontend/src/app/services/local
 import 'package:authentication_and_authorization_frontend/src/app/services/local_storage/models/user_tokens.dart';
 import 'package:authentication_and_authorization_frontend/src/app/services/local_storage/interfaces/local_storage.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/presenter/controllers/splash/splash_state.dart';
+import 'package:flutter/material.dart';
 
 class SplashCubit extends Cubit<SplashState> {
   final ILocalStorage<UserInfo> _localStorage;
@@ -30,7 +31,8 @@ class SplashCubit extends Cubit<SplashState> {
       }
 
       emit(state.copyWith(status: SplashStatus.userAlreadySignedIn));
-    } catch (e) {
+    } catch (e, s) {
+      debugPrintStack(stackTrace: s);
       emit(state.copyWith(
         status: SplashStatus.failed,
         errorMessage: FailureMessages.unexpectedFailure,

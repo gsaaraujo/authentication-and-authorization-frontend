@@ -1,3 +1,5 @@
+import 'package:authentication_and_authorization_frontend/src/app/services/local_storage/models/user_info.dart';
+import 'package:authentication_and_authorization_frontend/src/app/services/local_storage/models/user_tokens.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/main/auth_module.dart';
 import 'package:dio/dio.dart';
 import 'package:hive/hive.dart';
@@ -16,8 +18,11 @@ class AppModule extends Module {
         Bind.factory((i) => Hive),
         Bind.factory((i) => const FlutterSecureStorage()),
         Bind.factory<IRestClient>((i) => DioRestClient(i()), export: true),
-        Bind.factory<ILocalStorage>((i) => UserLocalStorage(i()), export: true),
-        Bind.factory<ILocalStorage>(
+        Bind.factory<ILocalStorage<UserInfo>>(
+          (i) => UserLocalStorage(i()),
+          export: true,
+        ),
+        Bind.factory<ILocalStorage<UserTokens>>(
           (i) => SecureLocalStorage(i()),
           export: true,
         ),

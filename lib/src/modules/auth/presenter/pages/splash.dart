@@ -17,11 +17,11 @@ class SplashPage extends StatelessWidget {
         bloc: splashCubit,
         listener: (context, state) {
           if (state.status == SplashStatus.userAlreadySignedIn) {
-            // Modular.to.pushNamed('/home');
+            Modular.to.navigate('/home');
           }
 
           if (state.status == SplashStatus.userNotSignedIn) {
-            Modular.to.pushNamed('/sign-in');
+            Modular.to.navigate('/sign-in');
           }
 
           if (state.status == SplashStatus.failed) {
