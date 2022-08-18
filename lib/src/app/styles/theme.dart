@@ -6,6 +6,13 @@ ThemeData loadTheme() {
   return ThemeData(
     useMaterial3: true,
     scaffoldBackgroundColor: AppColors.background,
+    appBarTheme: const AppBarTheme(
+      elevation: 0,
+      backgroundColor: AppColors.background,
+      iconTheme: IconThemeData(
+        color: Colors.white,
+      ),
+    ),
     snackBarTheme: const SnackBarThemeData(
       backgroundColor: AppColors.backgroundSnackbar,
       shape: RoundedRectangleBorder(),

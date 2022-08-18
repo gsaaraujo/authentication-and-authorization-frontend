@@ -2,4 +2,5 @@ import 'package:authentication_and_authorization_frontend/src/modules/auth/data/
 
 abstract class IUserRepository {
   Future<UserModel> signIn(String email, String password);
+  Future<UserModel> signUp(String name, String email, String password);
 }

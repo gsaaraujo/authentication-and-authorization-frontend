@@ -22,4 +22,20 @@ class UserRepository implements IUserRepository {
       refreshToken: response['refreshToken'],
     );
   }
+
+  @override
+  Future<UserModel> signUp(String name, String email, String password) async {
+    final response = await _restClient.post(
+      '/auth/sign-up',
+      {"email": email, "name": name, "password": password},
+    );
+
+    return UserModel(
+      id: response['id'],
+      name: response['name'],
+      email: response['email'],
+      accessToken: response['accessToken'],
+      refreshToken: response['refreshToken'],
+    );
+  }
 }

@@ -64,12 +64,14 @@ class _SignInPageState extends State<SignInPage> {
                       InputText(
                         label: 'Your email',
                         controller: _emailController,
+                        textInputType: TextInputType.emailAddress,
                         icon: const Icon(Icons.email_outlined),
                       ),
                       const SizedBox(height: 16.0),
                       InputText(
                         label: 'Your password',
                         controller: _passwordController,
+                        textInputType: TextInputType.visiblePassword,
                         icon: const Icon(Icons.lock_outline),
                         isPassword: true,
                       ),
@@ -107,7 +109,7 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                       const SizedBox(height: 80.0),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () => Modular.to.pushNamed('/sign-up'),
                         child: Column(
                           children: [
                             const Text(
