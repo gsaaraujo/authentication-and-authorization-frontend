@@ -22,7 +22,7 @@ class UserLocalStorage implements ILocalStorage<UserInfo> {
   @override
   Future<UserInfo?> read(String key) async {
     final box = await _hive.openBox('BOX');
-    final existKey = box.containsKey('key');
+    final existKey = box.containsKey(key);
 
     if (!existKey) return null;
 
