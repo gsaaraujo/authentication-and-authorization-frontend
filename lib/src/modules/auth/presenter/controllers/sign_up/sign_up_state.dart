@@ -1,3 +1,5 @@
+import 'package:equatable/equatable.dart';
+
 enum SignUpStatus {
   initial,
   loading,
@@ -5,11 +7,11 @@ enum SignUpStatus {
   failed,
 }
 
-class SignUpState {
+class SignUpState extends Equatable {
   final SignUpStatus status;
   final String errorMessage;
 
-  SignUpState({
+  const SignUpState({
     required this.status,
     this.errorMessage = '',
   });
@@ -20,4 +22,7 @@ class SignUpState {
       errorMessage: errorMessage ?? this.errorMessage,
     );
   }
+
+  @override
+  List<Object?> get props => [status, errorMessage];
 }

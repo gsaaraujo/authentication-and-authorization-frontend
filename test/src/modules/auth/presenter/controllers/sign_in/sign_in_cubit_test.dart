@@ -23,8 +23,6 @@ void main() {
     signInCubit = SignInCubit(mockSignInUsecase);
   });
 
-  final mockDioError = MockDioError();
-
   const fakeUserCredentialsDTO = UserCredentialsDTO(
     email: 'any_email',
     password: 'any_password',

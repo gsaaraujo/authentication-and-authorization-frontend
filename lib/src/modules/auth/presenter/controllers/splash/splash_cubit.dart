@@ -14,7 +14,7 @@ class SplashCubit extends Cubit<SplashState> {
   SplashCubit(
     this._localStorage,
     this._secureLocalStorage,
-  ) : super(SplashState(status: SplashStatus.initial));
+  ) : super(const SplashState(status: SplashStatus.initial));
 
   void redirectUser() async {
     try {
@@ -25,7 +25,7 @@ class SplashCubit extends Cubit<SplashState> {
         KeysConst.USER_SECURE_LOCAL_STORAGE,
       );
 
-      if (userInfo == null && userTokens == null) {
+      if (userInfo == null || userTokens == null) {
         emit(state.copyWith(status: SplashStatus.userNotSignedIn));
         return;
       }
