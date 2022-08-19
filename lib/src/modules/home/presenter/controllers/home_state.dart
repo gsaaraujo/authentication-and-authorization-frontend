@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:equatable/equatable.dart';
+
 enum HomeStatus {
   initial,
   loading,
@@ -6,11 +8,11 @@ enum HomeStatus {
   failed,
 }
 
-class HomeState {
+class HomeState extends Equatable {
   final HomeStatus status;
   final String errorMessage;
 
-  HomeState({
+  const HomeState({
     required this.status,
     this.errorMessage = '',
   });
@@ -21,4 +23,7 @@ class HomeState {
       errorMessage: errorMessage ?? this.errorMessage,
     );
   }
+
+  @override
+  List<Object?> get props => [status, errorMessage];
 }

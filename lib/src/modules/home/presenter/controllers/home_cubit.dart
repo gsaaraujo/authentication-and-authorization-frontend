@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:authentication_and_authorization_frontend/src/app/helpers/failure.dart';
 import 'package:bloc/bloc.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/home/data/usecases/interfaces/sign_out.dart';
@@ -10,7 +9,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   HomeCubit(
     this._signOutUsecase,
-  ) : super(HomeState(status: HomeStatus.initial));
+  ) : super(const HomeState(status: HomeStatus.initial));
 
   void signOut() async {
     try {
