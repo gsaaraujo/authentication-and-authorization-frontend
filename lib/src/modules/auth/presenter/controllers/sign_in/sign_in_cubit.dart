@@ -9,7 +9,7 @@ import 'package:flutter/cupertino.dart';
 
 class SignInCubit extends Cubit<SignInState> {
   SignInCubit(this._signInUsecase)
-      : super(SignInState(status: SignInStatus.initial));
+      : super(const SignInState(status: SignInStatus.initial));
 
   final ISignInUsecase _signInUsecase;
 

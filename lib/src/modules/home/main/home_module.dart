@@ -1,4 +1,3 @@
-import 'package:authentication_and_authorization_frontend/src/modules/auth/main/auth_module.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/presenter/pages/sign_in.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:authentication_and_authorization_frontend/src/main/app_module.dart';
