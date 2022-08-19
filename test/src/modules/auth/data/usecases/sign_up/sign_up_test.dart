@@ -1,13 +1,11 @@
-import 'package:authentication_and_authorization_frontend/src/modules/auth/data/dtos/user_register.dart';
-import 'package:authentication_and_authorization_frontend/src/modules/auth/data/usecases/sign_up/sign_up.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:authentication_and_authorization_frontend/src/app/constants/keys.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/data/models/user.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/data/dtos/user_signed.dart';
+import 'package:authentication_and_authorization_frontend/src/modules/auth/data/dtos/user_register.dart';
 import 'package:authentication_and_authorization_frontend/src/modules/auth/data/ports/user_repository.dart';
-import 'package:authentication_and_authorization_frontend/src/modules/auth/data/dtos/user_credentials.dart';
-import 'package:authentication_and_authorization_frontend/src/modules/auth/data/usecases/sign_in/sign_in.dart';
+import 'package:authentication_and_authorization_frontend/src/modules/auth/data/usecases/sign_up/sign_up.dart';
 import 'package:authentication_and_authorization_frontend/src/app/services/local_storage/models/user_info.dart';
 import 'package:authentication_and_authorization_frontend/src/app/services/local_storage/models/user_tokens.dart';
 import 'package:authentication_and_authorization_frontend/src/app/services/local_storage/interfaces/local_storage.dart';
